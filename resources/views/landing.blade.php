@@ -7,7 +7,8 @@
 			<span>Hello {{ $user_info['username'] }},</span>
 		</div>
 		<div id="app" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<image-display></image-display>
+			<image-display v-show="imageDisplay"></image-display>
+			<message-display v-show="messageDisplay"></message-display>
 		</div>
 		<hr>
 	</div>

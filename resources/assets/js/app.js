@@ -19,10 +19,24 @@ $.ajaxSetup({
 });
 
 import ImageDisplay from './components/ImageDisplay.vue';
+import MessageDisplay from './components/MessageDisplay.vue';
 
 let app = new Vue({
     el: '#app',
-    components: {ImageDisplay}
+    components: {ImageDisplay,MessageDisplay},
+    data(){
+    	return {
+    		posts: window.posts
+    	}
+    },
+    computed:{
+    	imageDisplay(){
+			return (posts>0)
+		},
+    	messageDisplay(){
+    		return (posts==0)
+    	}
+    }
 });
 
 toastr.options = {

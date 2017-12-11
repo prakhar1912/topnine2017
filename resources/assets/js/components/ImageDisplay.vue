@@ -1,5 +1,5 @@
 <template>
-    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 display">
         <button class="btn btn-primary btn-block button" id="trigger" @click="getImage">Click here to get your top nine posts of 2017!</button>
         <div v-show="visible" class="generated-image">
             <img :src="source"/>
@@ -53,6 +53,9 @@
 </script>
 
 <style>
+    .display{
+        min-height: 720px;
+    }
     .generated-image img{
         display: block;
         max-width: 100%;
