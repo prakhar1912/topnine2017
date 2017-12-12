@@ -13,7 +13,6 @@
         <div v-show="visible">
             <a :href="facebookLink" class="btn btn-primary button" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Share</a>
             <a :href="twitterLink" class="btn btn-primary button" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Tweet</a>
-            <h3>Thanks for using the Hopper HQ Top Nine</h3>
             <h3>Don't forget the official hashtag!</h3>
             <br>
             <br>

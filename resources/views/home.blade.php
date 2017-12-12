@@ -7,7 +7,7 @@
         <a href="https://api.instagram.com/oauth/authorize/?client_id={{ env('CLIENT-ID') }}&redirect_uri={{ env('REDIRECT-URI') }}&response_type=code&scope=public_content" class="search-button"><i class="fa fa-search"></i></a>
     </div>
     <div class="top-insta">
-    	<h3>Top Instagrammers of 2017</h3>
+    	<h1>Top Instagrammers of 2017</h1>
     	<h5>From Instagram's year in review, we've listed the most followed Instagrammer's of 2017</h5>
         <br>
         <br>
