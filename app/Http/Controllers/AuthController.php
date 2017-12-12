@@ -9,6 +9,7 @@ use GuzzleHttp\Exception\RequestException;
 use Carbon\Carbon;
 use phpseclib\Crypt\RSA;
 use phpseclib\Net\SSH2;
+use File;
 
 class AuthController extends Controller
 {
@@ -109,6 +110,13 @@ class AuthController extends Controller
         $result = exec($command);
 
         return $result;
+    }
+
+    public function logout(Request $request){
+        $username = $request['username'];
+        $delete1 = File::delete('images/2017topnine_'.$username.'_original.jpeg');
+        $delete2 = File::delete('images/2017topnine_'.$username.'_photo.jpeg');
+        return [$delete1,$delete2];
     }
 
 }

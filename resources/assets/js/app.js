@@ -42,3 +42,26 @@ let app = new Vue({
 toastr.options = {
 	'positionClass':'toast-bottom-left'
 };
+
+$('#logout').on('click',function(){
+    $('.primary-container').append('<div style="display:none"><iframe src="https://instagram.com/accounts/logout"></iframe></div>');
+    $.ajax({
+        url: '/logout',
+        type: 'POST',
+        data:{
+            username: window.username
+        },
+        beforeSend: function(){
+            $('#logout').html("Loading...").css('pointer-events','none');
+        }
+    }).done(response => {
+        if(response[0]&&response[1]){
+            toastr.success('Logout successful. Redirecting....');
+        } else{
+            toastr.error('Something went wrong while trying to logout.');
+        }
+        setTimeout(function(){
+            location.href="/";
+        },2000);
+    });
+});

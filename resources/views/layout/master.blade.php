@@ -16,7 +16,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
         <header class="header">
-            <img class="site-logo" src="{{ asset('images/site_assets/topninelogo.png') }}"/>
+            <a href="/"><img class="site-logo" src="{{ asset('images/site_assets/topninelogo.png') }}"/></a>
         </header>
         <div class="row">
             <div class="col-md-8 col-md-offset-2 col-sm-12 col-lg-10 col-lg-offset-1 col-xs-12">
@@ -29,7 +29,7 @@
 
         <footer class="footer">
             <p>
-                <a href="#">Privacy Policy</a>
+                <a href="/privacy-policy">Privacy Policy</a>
             </p>
         </footer>
 

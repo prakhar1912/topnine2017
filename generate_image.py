@@ -17,16 +17,19 @@ body="""
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                font-size: 30px;
+                font-size: 40px;
                 font-family: 'Roboto';
             }
             .primary-container{
                 padding: 15px;
                 width: 1110px;
             }
+            .top{
+                padding:15px;
+            }
             .top img{
-                width: 70px;
-                height: 70px;
+                width: 90px;
+                height: 90px;
                 border-radius: 50%;
                 margin-right: 20px;
             }
@@ -57,7 +60,7 @@ body="""
             	height: 360px;
             }
             .bottom{
-                padding:5px;
+                padding:15px;
             }
         </style>
     </head>
@@ -118,7 +121,7 @@ options_photo = {
     'crop-h': '1080',
     'crop-w': '1080',
     'crop-x': '15',
-    'crop-y': '90'
+    'crop-y': '140'
 }
 
 imagename = '2017topnine_'+username

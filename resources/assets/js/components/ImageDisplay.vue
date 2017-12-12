@@ -5,8 +5,22 @@
             <img :src="source"/>
             <br>
             <br>
-            <span @click="originalImage()">Original Version</span>
+            <span @click="originalImage()">Original Version</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span @click="photoVersion()">Photo Version</span>
+        </div>
+        <br>
+        <br>
+        <div v-show="visible">
+            <a :href="facebookLink" class="btn btn-primary button" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Share</a>
+            <a :href="twitterLink" class="btn btn-primary button" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Tweet</a>
+            <h3>Thanks for using the Hopper HQ Top Nine</h3>
+            <h3>Don't forget the official hashtag!</h3>
+            <br>
+            <br>
+            <h1 style="color:#4c82f2;font-weight:bold">#TopNine2017</h1>
+            <br>
+            <br>
+            <br>
         </div>
     </div>
 </template>
@@ -48,6 +62,14 @@
             photoVersion: function(){
                 this.source = 'images/'+this.name+'_photo.jpeg';
             }
+        },
+        computed:{
+            facebookLink(){
+                return "http://www.facebook.com/sharer.php?u=http://45.55.139.230/"+this.source;
+            },
+            twitterLink(){
+                return "#";
+            }
         }
     }
 </script>
@@ -64,7 +86,8 @@
         width: 75%;
     }
     .generated-image span{
-        text-decoration: underline;
+        color: #4c82f2;
+        font-style: italic;
         cursor: pointer;
     }
 </style>

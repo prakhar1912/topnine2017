@@ -16,5 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/auth','AuthController@landing');
+Route::get('/privacy-policy',function(){
+	return view('privacy');
+});
 
 Route::post('/generate/image','AuthController@generateImage');
+Route::post('/logout','AuthController@logout');

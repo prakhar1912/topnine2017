@@ -1,10 +1,27 @@
 @extends('layout.master')
 
 @section('content')
+	<script>window.twttr = (function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0],
+		    t = window.twttr || {};
+		  if (d.getElementById(id)) return t;
+		  js = d.createElement(s);
+		  js.id = id;
+		  js.src = "https://platform.twitter.com/widgets.js";
+		  fjs.parentNode.insertBefore(js, fjs);
+
+		  t._e = [];
+		  t.ready = function(f) {
+		    t._e.push(f);
+		  };
+
+		  return t;
+		}(document, "script", "twitter-wjs"));</script>
 	<div class="hero">
-		<div class="welcome-message clearfix">
+		<div class="welcome-message clearfix" style="position: relative;">
 			<img src="{{ $user_info['profile_picture'] }}" />
 			<span>Hello {{ $user_info['username'] }},</span>
+			<button class="btn btn-primary button" id="logout" style="position:absolute;right:0;"><i class="fa fa-sign-out"></i>Log out</button>
 		</div>
 		<div id="app" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<image-display v-show="imageDisplay"></image-display>
