@@ -1,6 +1,6 @@
 <template>
     <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 display">
-        <button class="btn btn-primary btn-block button" id="trigger" @click="getImage">Click here to get your top nine posts of 2017!</button>
+        <button class="btn btn-primary btn-block button" id="trigger" @click="getImage">Get Top Nine Posts!</button>
         <div v-show="visible" class="generated-image">
             <img :src="source"/>
             <br>
@@ -56,10 +56,12 @@
     .display{
         min-height: 720px;
     }
+    .generated-image{
+        text-align: center;
+    }
     .generated-image img{
-        display: block;
-        max-width: 100%;
-        border: 1px solid black;
+        display: inline-block;
+        width: 75%;
     }
     .generated-image span{
         text-decoration: underline;

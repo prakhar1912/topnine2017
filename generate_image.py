@@ -10,20 +10,23 @@ images = argv[5:]
 body="""
 	<html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100" rel="stylesheet">
         <style>
             *{
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                font-size: 20px;
+                font-size: 30px;
+                font-family: 'Roboto';
             }
             .primary-container{
-                margin: 10px;
-                width: 600px;
+                padding: 15px;
+                width: 1110px;
             }
             .top img{
-                width: 40px;
-                height: 40px;
+                width: 70px;
+                height: 70px;
                 border-radius: 50%;
                 margin-right: 20px;
             }
@@ -36,7 +39,7 @@ body="""
                 clear: both;
             }
             .image-grid{
-                width: 100%;
+                width: 1080px;
             }
             .image-grid:after{
                 content:'';
@@ -44,14 +47,14 @@ body="""
                 clear: both;
             }
             .image-grid .image{
-                width: 200px;
-                height: 200px;
+                width: 360px;
+                height: 360px;
                 float: left;
                 border: none;
                 text-align: center;
             }
             .image img{
-            	height: 200px;
+            	height: 360px;
             }
             .bottom{
                 padding:5px;
@@ -68,12 +71,12 @@ body+=profile_picture
 body+="""
                     "/>
                 <div>
-                    <p style="font-weight: bold">
+                    <p style="font-weight: 700">
     """
 body+=username
 body+="""
         </p>
-        <p>2017 top nine on Instagram&nbsp;<span style="font-weight: bold">#TopNine2017</span></p>
+        <p style="color:#666">2017 top nine on Instagram&nbsp;<span style="font-weight: 700;color:#4c82f2">#TopNine2017</span></p>
     </div>
 </div>
 <div class="image-grid">
@@ -85,7 +88,7 @@ for image in images:
 body+="""
             </div>
             <div class="bottom">
-                <p><span style="font-weight: bold"><img src="http://cdn.mysitemyway.com/icons-watermarks/simple-black/foundation/foundation_heart/foundation_heart_simple-black_512x512.png" style="width:15px"/>&nbsp;
+                <p style="color:#666"><span style="font-weight: 700;color:black"><i class="fa fa-heart" style="color:red"></i>
                 """
 body+=likes
 body+="""
@@ -93,7 +96,7 @@ body+="""
          """
 body+=posts
 body+=""" posts in 2017</p>
-                <p><span style="font-weight: bold">
+                <p style="color:#666"><span style="font-weight: 700;color:black">
                 """
 body+=username
 body+="""
@@ -105,17 +108,17 @@ body+="""
 """
 
 options_original = {
-    'crop-h': '720',
-    'crop-w': '620',
+    'crop-h': '1920',
+    'crop-w': '1110',
     'crop-x': '0',
     'crop-y': '0'
 }
 
 options_photo = {
-    'crop-h': '600',
-    'crop-w': '620',
-    'crop-x': '0',
-    'crop-y': '60'
+    'crop-h': '1080',
+    'crop-w': '1080',
+    'crop-x': '15',
+    'crop-y': '90'
 }
 
 imagename = '2017topnine_'+username

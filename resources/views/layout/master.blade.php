@@ -17,10 +17,9 @@
         <![endif]-->
         <header class="header">
             <img class="site-logo" src="{{ asset('images/site_assets/topninelogo.png') }}"/>
-            <img class="right" src="{{ asset('images/site_assets/pbh.png') }}"/>
         </header>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-sm-12 col-lg-6 col-lg-offset-3 col-xs-12">
+            <div class="col-md-8 col-md-offset-2 col-sm-12 col-lg-10 col-lg-offset-1 col-xs-12">
                 @yield('content')
                 <br>
                 <br>
