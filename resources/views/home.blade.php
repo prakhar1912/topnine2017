@@ -14,7 +14,7 @@
         <br>
 		@php
 			for($count=1;$count<=10;$count++){
-				echo "<div><img src=\"images\\celebrities\\{$count}.png\"/></div>";
+				echo "<div class=\"col-sm-12 col-xs-12 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2\"><img src=\"images\\celebrities\\{$count}.png\"/></div>";
 			}
 		@endphp
     </div>
