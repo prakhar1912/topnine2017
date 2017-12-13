@@ -52,15 +52,15 @@
                     $('#trigger').slideUp();
                     window.imagename = response;
                     this.name = response;
-                    this.source = 'images/'+response+'_original.jpeg';
+                    this.source = 'images/insta/'+response+'_original.jpeg';
                     this.visible = true;
                 });
             },
             originalImage: function(){
-                this.source = 'images/'+this.name+'_original.jpeg';
+                this.source = 'images/insta/'+this.name+'_original.jpeg';
             },
             photoVersion: function(){
-                this.source = 'images/'+this.name+'_photo.jpeg';
+                this.source = 'images/insta/'+this.name+'_photo.jpeg';
             }
         },
         computed:{

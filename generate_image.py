@@ -126,6 +126,6 @@ options_photo = {
 
 imagename = '2017topnine_'+str(uuid.uuid4())
 
-imgkit.from_string(body, 'images/'+imagename+'_original.jpeg', options=options_original)
-imgkit.from_string(body, 'images/'+imagename+'_photo.jpeg', options=options_photo)
+imgkit.from_string(body, 'images/insta/'+imagename+'_original.jpeg', options=options_original)
+imgkit.from_string(body, 'images/insta/'+imagename+'_photo.jpeg', options=options_photo)
 print(imagename)

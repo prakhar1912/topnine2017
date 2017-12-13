@@ -22,3 +22,5 @@ Route::get('/privacy-policy',function(){
 
 Route::post('/generate/image','AuthController@generateImage');
 Route::post('/logout','AuthController@logout');
+
+Route::get('/auto-delete-images','AuthController@cronFunction');

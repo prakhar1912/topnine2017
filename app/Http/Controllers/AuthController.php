@@ -114,9 +114,21 @@ class AuthController extends Controller
 
     public function logout(Request $request){
         $imagename = $request['imagename'];
-        $delete1 = File::delete('images/'.$imagename.'_original.jpeg');
-        $delete2 = File::delete('images/'.$imagename.'_photo.jpeg');
+        $delete1 = File::delete('images/insta/'.$imagename.'_original.jpeg');
+        $delete2 = File::delete('images/insta/'.$imagename.'_photo.jpeg');
         return [$delete1,$delete2];
     }
 
+    public function cronFunction(){
+        $current_time = Carbon::now();
+        $files = File::allFiles('images/insta');
+        foreach ($files as $file)
+        {
+            $timestamp = Carbon::createFromTimestamp(File::lastModified($file));
+            $difference = $current_time->diffInHours($timestamp);
+            if($difference!=0){
+                File::delete($file);
+            }
+        }
+    }
 }
