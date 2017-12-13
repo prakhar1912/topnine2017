@@ -57,6 +57,7 @@ body="""
                 text-align: center;
             }
             .image img{
+                max-width: 360px;
             	height: 360px;
             }
             .bottom{

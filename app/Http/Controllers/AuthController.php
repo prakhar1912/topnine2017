@@ -67,7 +67,7 @@ class AuthController extends Controller
         
         arsort($data);
 
-        $top_nine = array_slice($data, 0, 8);
+        $top_nine = array_slice($data, 0, 9);
 
         $user_info['top_nine'] = array_keys($top_nine);
         $user_info['total_posts'] = $posts;
