@@ -50,6 +50,7 @@
                     }
                 }).done(response => {
                     $('#trigger').slideUp();
+                    window.imagename = response;
                     this.name = response;
                     this.source = 'images/'+response+'_original.jpeg';
                     this.visible = true;

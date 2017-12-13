@@ -43,7 +43,7 @@ class AuthController extends Controller
         $access_token = $user_info['access_token'];
 
         $client = new GuzzleHttp\Client();
-        $response = $client->get('https://api.instagram.com/v1/users/self/media/recent/?access_token='.$access_token);
+        $response = $client->get('https://api.instagram.com/v1/users/self/media/recent/?access_token='.$access_token.'&amp;count=1000');
         
         $body = $response->getBody()->getContents();
         $content = json_decode($body,true);
@@ -113,9 +113,9 @@ class AuthController extends Controller
     }
 
     public function logout(Request $request){
-        $username = $request['username'];
-        $delete1 = File::delete('images/2017topnine_'.$username.'_original.jpeg');
-        $delete2 = File::delete('images/2017topnine_'.$username.'_photo.jpeg');
+        $imagename = $request['imagename'];
+        $delete1 = File::delete('images/'.$imagename.'_original.jpeg');
+        $delete2 = File::delete('images/'.$imagename.'_photo.jpeg');
         return [$delete1,$delete2];
     }
 

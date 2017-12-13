@@ -1,5 +1,6 @@
 from sys import argv
 import imgkit
+import uuid
 
 username = argv[1]
 profile_picture = argv[2]
@@ -8,7 +9,7 @@ likes = argv[4]
 images = argv[5:]
 
 body="""
-	<html>
+    <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100" rel="stylesheet">
@@ -55,10 +56,8 @@ body="""
                 float: left;
                 border: none;
                 text-align: center;
-            }
-            .image img{
-                max-width: 360px;
-            	height: 360px;
+                background-position: center center;
+                background-size: cover;
             }
             .bottom{
                 padding:15px;
@@ -86,7 +85,7 @@ body+="""
 <div class="image-grid">
 """
 for image in images:
-    imagestring = "<div class=\"image\"><img src=\""+image+"\" /></div>"
+    imagestring = "<div class=\"image\" style=\"background-image: url(\'"+image+"\')\"></div>"
     body+=imagestring
 
 body+="""
@@ -125,7 +124,7 @@ options_photo = {
     'crop-y': '140'
 }
 
-imagename = '2017topnine_'+username
+imagename = '2017topnine_'+str(uuid.uuid4())
 
 imgkit.from_string(body, 'images/'+imagename+'_original.jpeg', options=options_original)
 imgkit.from_string(body, 'images/'+imagename+'_photo.jpeg', options=options_photo)
