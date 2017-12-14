@@ -109,8 +109,8 @@ class AuthController extends Controller
 
     	$username = $request['username'];
         $profile_picture = $request['profile_picture'];
-        $total_posts = $request['posts'];
-        $total_likes = $request['likes'];
+        $total_posts = number_format($request['posts']);
+        $total_likes = number_format($request['likes']);
         $top_nine = $request['top_nine'];
         $posts = "";
 
