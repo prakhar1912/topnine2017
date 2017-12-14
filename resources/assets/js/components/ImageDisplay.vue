@@ -14,9 +14,9 @@
             <div class="share-buttons">
                 <a href="http://www.hopperhq.com/?utm_source=TopNine2017&amp;utm_medium=Sharebutton&amp;utm_campaign=Schedule%20to%20IG" class="btn btn-primary btn-block button" target="_blank"><i class="fa fa-instagram"></i>&nbsp;Schedule to Instagram</a>
                 <br>
-                <a href="#" class="btn btn-primary btn-block button" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Share</a>
+                <a href="https://www.facebook.com/sharer.php?u=http://topnine2017.com" class="btn btn-primary btn-block button" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Share</a>
                 <br>
-                <a href="#" class="btn btn-primary btn-block button" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Tweet</a>
+                <a href="https://twitter.com/share?url=http://topnine2017.com&amp;text=Get%20your%20top%20nine%20Instagram%20posts%20for%202017%20at%20&amp;hashtags=TopNine2017" class="btn btn-primary btn-block button" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Tweet</a>
             </div>
             <h3>Don't forget the official hashtag!</h3>
             <br>
