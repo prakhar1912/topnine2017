@@ -49,7 +49,7 @@ $('#logout').on('click',function(){
         url: '/logout',
         type: 'POST',
         data:{
-            imagename: window.imagename
+            username: window.username
         },
         beforeSend: function(){
             $('#logout').html("Loading...").css('pointer-events','none');

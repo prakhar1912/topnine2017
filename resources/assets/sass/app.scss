@@ -34,12 +34,40 @@ a:hover{
 		display: inline-block;
 		height: 100%;
 	}
+
+	img.hopper{
+		position: absolute;
+		right: 0;
+		height: 60%;
+	}
+
+	.links{
+		position: absolute;
+		left: 0;
+		width: 40px;
+		margin: 5px;
+		height: 100%;
+
+		a{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: white;
+			font-size: 20px;
+			margin-top: 5px;
+		}
+	}
+
+	.ig-approved{
+		position: absolute;
+		left: 50px;
+	}
 }
 .primary-container{
 	background: $background-color;
 
 	.hero{
-		padding-bottom: 100px;
 
 		.username-search{
 			display: inline-block;

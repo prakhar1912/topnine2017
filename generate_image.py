@@ -1,6 +1,5 @@
 from sys import argv
 import imgkit
-import uuid
 
 username = argv[1]
 profile_picture = argv[2]
@@ -124,7 +123,7 @@ options_photo = {
     'crop-y': '140'
 }
 
-imagename = '2017topnine_'+str(uuid.uuid4())
+imagename = '2017topnine_'+username
 
 imgkit.from_string(body, 'images/insta/'+imagename+'_original.jpeg', options=options_original)
 imgkit.from_string(body, 'images/insta/'+imagename+'_photo.jpeg', options=options_photo)

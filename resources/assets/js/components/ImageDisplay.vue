@@ -1,5 +1,5 @@
 <template>
-    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 display">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3 display">
         <button class="btn btn-primary btn-block button" id="trigger" @click="getImage">Get Top Nine Posts!</button>
         <div v-show="visible" class="generated-image">
             <img :src="source"/>
@@ -11,8 +11,13 @@
         <br>
         <br>
         <div v-show="visible">
-            <a :href="facebookLink" class="btn btn-primary button" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Share</a>
-            <a :href="twitterLink" class="btn btn-primary button" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Tweet</a>
+            <div class="share-buttons">
+                <a href="http://www.hopperhq.com/?utm_source=TopNine2017&amp;utm_medium=Sharebutton&amp;utm_campaign=Schedule%20to%20IG" class="btn btn-primary btn-block button" target="_blank"><i class="fa fa-instagram"></i>&nbsp;Schedule to Instagram</a>
+                <br>
+                <a href="#" class="btn btn-primary btn-block button" target="_blank"><i class="fa fa-facebook"></i>&nbsp;Share</a>
+                <br>
+                <a href="#" class="btn btn-primary btn-block button" target="_blank"><i class="fa fa-twitter"></i>&nbsp;Tweet</a>
+            </div>
             <h3>Don't forget the official hashtag!</h3>
             <br>
             <br>
@@ -50,7 +55,6 @@
                     }
                 }).done(response => {
                     $('#trigger').slideUp();
-                    window.imagename = response;
                     this.name = response;
                     this.source = 'images/insta/'+response+'_original.jpeg';
                     this.visible = true;
@@ -61,14 +65,6 @@
             },
             photoVersion: function(){
                 this.source = 'images/insta/'+this.name+'_photo.jpeg';
-            }
-        },
-        computed:{
-            facebookLink(){
-                return "http://www.facebook.com/sharer.php?u=http://45.55.139.230/"+this.source;
-            },
-            twitterLink(){
-                return "#";
             }
         }
     }
@@ -83,7 +79,7 @@
     }
     .generated-image img{
         display: inline-block;
-        width: 75%;
+        width: 100%;
     }
     .generated-image span{
         color: #4c82f2;

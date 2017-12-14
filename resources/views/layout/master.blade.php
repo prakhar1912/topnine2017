@@ -16,7 +16,15 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
         <header class="header">
+            <div class="links">
+                <a href="#" style="background-color:#3b5998"><i class="fa fa-facebook"></i></a>
+                <a href="#" style="background-color: #0084b4"><i class="fa fa-twitter"></i></a>
+                <a href="#" style="background-color: #d34836"><i class="fa fa-google-plus"></i></a>
+            </div>
+            <img class="ig-approved" src="{{ asset('images/site_assets/ig_approved.png') }}" />
             <a href="/"><img class="site-logo" src="{{ asset('images/site_assets/topninelogo.png') }}"/></a>
+            <a href="https://www.hopperhq.com?utm_source=TopNine2017&utm_medium=poweredbyhopper&utm_
+            campaign=logo" target="_blank"><img class="hopper" src="{{ asset('images/site_assets/pbh.png') }}" /></a>
         </header>
         <div class="row">
             <div class="col-md-8 col-md-offset-2 col-sm-12 col-lg-10 col-lg-offset-1 col-xs-12">

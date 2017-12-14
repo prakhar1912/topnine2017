@@ -113,9 +113,9 @@ class AuthController extends Controller
     }
 
     public function logout(Request $request){
-        $imagename = $request['imagename'];
-        $delete1 = File::delete('images/insta/'.$imagename.'_original.jpeg');
-        $delete2 = File::delete('images/insta/'.$imagename.'_photo.jpeg');
+        $username = $request['username'];
+        $delete1 = File::delete('images/insta/2017topnine_'.$username.'_original.jpeg');
+        $delete2 = File::delete('images/insta/2017topnine_'.$username.'_photo.jpeg');
         return [$delete1,$delete2];
     }
 
