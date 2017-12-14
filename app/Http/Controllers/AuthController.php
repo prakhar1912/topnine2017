@@ -43,27 +43,42 @@ class AuthController extends Controller
         $access_token = $user_info['access_token'];
 
         $client = new GuzzleHttp\Client();
-        $response = $client->get('https://api.instagram.com/v1/users/self/media/recent/?access_token='.$access_token.'&amp;count=1000');
-        
-        $body = $response->getBody()->getContents();
-        $content = json_decode($body,true);
-        $images = $content['data'];
 
         $data = array();
         $total_likes = 0;
         $posts = 0;
+        $images = array();
 
+        $max_id = 0;
+        $new_images = true;
 
-        foreach($images as $image){
-            $year = Carbon::parse(date('M j, Y', $image['created_time']))->year;
-            $likes = $image['likes']['count'];
-
-            if($year == 2017){
-                $data[$image['images']['standard_resolution']['url']] = $likes;
-                $total_likes += $likes;
-                $posts +=1;
+        do{
+            if($max_id == 0){
+                $response = $client->get('https://api.instagram.com/v1/users/self/media/recent/?access_token='.$access_token.'&amp;count=1000');
+            } else {
+                $response = $client->get('https://api.instagram.com/v1/users/self/media/recent/?access_token='.$access_token.'&amp;max_id='.$max_id.'&amp;count=1000');
             }
-        }
+
+            $body = $response->getBody()->getContents();
+            $content = json_decode($body,true);
+            $images = $content['data'];
+
+            if(empty($images)){
+                $new_images = false;
+            } else{
+                foreach($images as $image){
+                    $year = Carbon::parse(date('M j, Y', $image['created_time']))->year;
+                    $likes = $image['likes']['count'];
+
+                    if($year == 2017){
+                        $data[$image['images']['standard_resolution']['url']] = $likes;
+                        $total_likes += $likes;
+                        $posts +=1;
+                    }
+                }
+                $max_id = end($images)['id'];
+            }
+        }while($new_images);
         
         arsort($data);
 
