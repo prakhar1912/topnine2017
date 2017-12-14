@@ -20,8 +20,9 @@
         <br>
         <br>
 		@php
-			for($count=1;$count<=10;$count++){
-				echo "<div class=\"col-sm-12 col-xs-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4\"><img src=\"images\\celebrities\\{$count}.png\"/></div>";
+            $names = ['Selena Gomez','Christiano Ronaldo','Ariana Grande','Beyonce','Kim Kardashian','Taylor Swift','Kylie Jenner','The Rock','Justin Bieber','Kendall Jenner'];
+			foreach($names as $name){
+				echo "<div class=\"col-sm-12 col-xs-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4\"><img src=\"images\\celebrities\\{$name}.png\" alt=\"{$name} Top Nine Instagram 2017\"/></div>";
 			}
 		@endphp
     </div>

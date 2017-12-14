@@ -141,3 +141,29 @@ a:focus{
 .bold{
 	font-weight: bold;
 }
+
+@media only screen and (max-width: 750px) {
+ 	.header{
+ 		.site-logo{
+ 			height: 60px;
+ 			margin-top: 30px;
+ 		}
+
+ 		img.hopper{
+ 			height: 30px;
+ 			top: 45px;
+ 		}
+
+ 		.ig-approved{
+ 			height: 50px;
+ 			top: 35px;
+ 		}
+ 	}
+ 	.primary-container{
+ 		.hero{
+ 			.username-search{
+ 				width: 80%;
+ 			}
+ 		}
+ 	}
+}
